@@ -104,8 +104,8 @@ button {
 }
 
 .brand-emblem {
-  width: 2.8rem;
-  height: 2.8rem;
+  width: 3.5rem;
+  height: 3.5rem;
   display: grid;
   place-items: center;
   background: rgba(255, 255, 255, 0.06);
@@ -123,12 +123,14 @@ button {
   height: 100%;
   object-fit: cover;
   display: block;
+  transform: scale(1.32);
+  transform-origin: center 42%;
 }
 
 .brand-text strong {
   display: block;
   font-family: "Manrope", sans-serif;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 800;
   letter-spacing: 0.01em;
   color: var(--text-main);
@@ -136,7 +138,7 @@ button {
 
 .brand-text small {
   display: block;
-  font-size: 0.7rem;
+  font-size: 0.74rem;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -309,9 +311,10 @@ button {
   margin-bottom: 1.5rem;
   color: rgba(255, 255, 255, 0.55);
   font-size: 0.78rem;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   font-weight: 600;
+  max-width: 30rem;
 }
 
 .hero-label-dot {
@@ -320,6 +323,7 @@ button {
   border-radius: 50%;
   background: var(--red-vivid);
   animation: pulse-dot 2s ease-in-out infinite;
+  flex-shrink: 0;
 }
 
 @keyframes pulse-dot {
@@ -720,6 +724,63 @@ button {
   gap: 1.5rem;
 }
 
+.services-grid.cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.span-all {
+  grid-column: 1 / -1;
+}
+
+/* Service feature rows */
+.svc-list {
+  list-style: none;
+  display: grid;
+  gap: 0;
+  margin-top: 1.25rem;
+}
+
+.svc-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.6rem 0;
+  border-top: 1px solid var(--line);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.svc-list li:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.svc-list li i {
+  display: grid;
+  place-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+  font-size: 0.95rem;
+  color: var(--red-light);
+  background: var(--red-muted);
+  border: 1px solid var(--line-red);
+  border-radius: 50%;
+  transition: all 0.25s ease;
+}
+
+.svc-list li:hover {
+  color: var(--text-main);
+  transform: translateX(4px);
+}
+
+.svc-list li:hover i {
+  background: var(--red-vivid);
+  border-color: var(--red-vivid);
+  color: #fff;
+}
+
 .service-card {
   position: relative;
   padding: 2rem;
@@ -942,13 +1003,12 @@ button {
   width: 100%;
   height: 420px;
   max-height: 420px;
-  object-fit: contain;
+  object-fit: cover;
   display: block;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--line);
-  padding: 1rem;
   border-radius: 12px;
-  filter: none;
+  filter: brightness(0.92);
 }
 
 .why-rating-badge {
@@ -1135,6 +1195,54 @@ button {
 .work-card:hover .work-card-footer {
   color: var(--red-vivid);
   transform: translateX(4px);
+}
+
+/* Brand tiles */
+.brands-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.brand-tile {
+  position: relative;
+  overflow: hidden;
+}
+
+.brand-tile-inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 1.5rem 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.brand-tile:hover .brand-tile-inner {
+  border-color: var(--line-red);
+  background: linear-gradient(145deg, rgba(185, 28, 28, 0.06), var(--bg-card));
+  transform: translateY(-3px);
+}
+
+.brand-region {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--red-light);
+}
+
+.brand-tile-inner h3 {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.2;
 }
 
 /* ===== CTA SECTION ===== */
@@ -1610,12 +1718,12 @@ a.contact-item:hover {
   }
 
   .brand-emblem {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 3rem;
+    height: 3rem;
   }
 
   .brand-text strong {
-    font-size: 0.92rem;
+    font-size: 1.05rem;
   }
 
   .brand-text small {
@@ -1641,6 +1749,7 @@ a.contact-item:hover {
   }
 
   .services-grid,
+  .services-grid.cols-2,
   .work-grid {
     grid-template-columns: 1fr;
   }

@@ -2483,6 +2483,14 @@ a.contact-item:hover {
     -webkit-clip-path: none;
             clip-path: none;
   }
+
+  .whatsapp-float {
+    display: none;
+  }
+
+  .hero-btn-wa {
+    display: none;
+  }
 }
 
 @media (max-width: 480px) {

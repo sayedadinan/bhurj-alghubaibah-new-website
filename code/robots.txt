@@ -1,0 +1,14 @@
+# robots.txt for https://burjalghubaibah.com
+# Generated: 2026-06-25
+
+User-agent: *
+Allow: /
+
+# Block access to non-public/utility files
+Disallow: /output.css
+Disallow: /input.css
+Disallow: /*.min.css$
+Disallow: /*.min.js$
+
+# Sitemap location
+Sitemap: https://burjalghubaibah.com/sitemap.xml
